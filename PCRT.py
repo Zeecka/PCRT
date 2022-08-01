@@ -375,6 +375,7 @@ class PNG(object):
             # show all possible image
             os.startfile(os.getcwd()+'/'+PATH)
             # final size
+            return False
             size = input(
                 'Input width, height, bits and channel(space to split):').split()
             # remove temporary file
@@ -715,9 +716,9 @@ class PNG(object):
                 while True:
                     msg = Termcolor(
                         'Notice', 'Try extracting them in:\n<1>File\n<2>Terminal\n<3>Quit\n[default:3] ')
-                    choice = input(msg)
+                    choice = 1#input(msg)
                     if choice == '1':
-                        filename = input('[File] Input the file name: ')
+                        filename = "pcrt.png.data" #input('[File] Input the file name: ')
                         file = WriteFile(filename)
                         file.write(data[pos+8:])
                         print('[Finished] Successfully write in %s' %
